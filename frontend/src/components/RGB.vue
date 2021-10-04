@@ -1,9 +1,9 @@
 <template>
   <div class="palette" :style="cssVars">
-      <div class="col">
-        <h3>Red: {{this.item.red}}</h3>
-        <h3>Green: {{this.item.green}}</h3>
-        <h3>Blue: {{this.item.blue}}</h3>
+      <div class="col text-caption text-sm-body-2">
+        Red: {{this.item.red}} <br>
+        Green: {{this.item.green}} <br>
+        Blue: {{this.item.blue}}
       </div>
   </div>
 </template>

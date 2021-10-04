@@ -7,8 +7,15 @@
               <span v-if="item.type === 'RGB'">
                   <RGB :item="item" />
               </span>
-              <span v-if="item.type === 'HSL'">
+              <span v-else-if="item.type === 'HSL'">
                   <HSL :item="item"/>
+              </span>
+              <span v-else>
+                  <div class="palette">
+                    <div class="col">
+                      <p>Unknown Type</p>
+                    </div>
+                  </div>
               </span>
               <v-card-text>Type: {{item.type}}</v-card-text>
               </v-card>
