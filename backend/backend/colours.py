@@ -27,22 +27,34 @@ class HSL(Colour):
     def __init__(self):
         self.type="HSL"
         self.hue = random.randrange(0,360,1) 
-        self.saturation = random.randrange(0,1000,1) 
-        self.lightness = random.randrange(0,1000,1) 
+        self.saturation = random.randrange(0,100,1) 
+        self.lightness = random.randrange(0,100,1) 
     def props(self):
         data = {
             "type": self.type,
-            "red": self.hue,
-            "blue": self.saturation,
-            "green": self.lightness
+            "hue": self.hue,
+            "saturation": self.saturation,
+            "lightness": self.lightness
+        } 
+        return data
+
+class BGRB(Colour):  
+    def __init__(self):
+        self.type="BGRB"
+        self.red = random.randrange(0,10000,1) 
+        self.blue = random.randrange(0,10000,1) 
+        self.green = random.randrange(0,10000,1) 
+    def props(self):
+        data = {
+            "type": self.type,
+            "red": self.red,
+            "blue": self.blue,
+            "green": self.green
         } 
         return data
 
 ##Colour List
-colour_array=[RGB, HSL]  
+colour_array=[RGB, HSL]#, BGRB]  
 
-def random_colour(x=random.randrange(0,len(colour_array))):
-    if x >= len(colour_array):
-        raise Exception
-    
-    return colour_array[x]()
+def random_colour():
+    return colour_array[random.randint(0,len(colour_array)-1)]()
