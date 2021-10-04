@@ -1,33 +1,23 @@
 <template>
-    <span class="rgb"></span>
+  <div class="palette" :style="cssVars">
+      <div class="col">
+        <h3>Red: {{this.item.red}}</h3>
+        <h3>Green: {{this.item.green}}</h3>
+        <h3>Blue: {{this.item.blue}}</h3>
+      </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "RGB", 
-    props: {
-        type: String, 
-        red: Number,
-        blue: Number, 
-        green: Number
+  name: "RGB",
+  props: {
+    item: Object
+  },
+  computed: {
+    cssVars() {
+      return `background-color: rgb(${this.item.red}, ${this.item.green}, ${this.item.blue});`;
     },
-    computed: {
-        cssVars() {
-            return {
-                '--red': this.red,
-                '--blue': this.blue,
-                '--green': this.green
-            } 
-        }
-    }
-}
+  },
+};
 </script>
-
-<style scoped>
-    .rgb {
-        background-color: rgb(var(--red), var(--blue), var(--green));
-        width:100%;
-        height: 0;
-        padding-bottom:100%; 
-    }
-</style>

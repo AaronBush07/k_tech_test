@@ -54,7 +54,7 @@ class BGRB(Colour):
         return data
 
 ##Colour List
-colour_array=[RGB, HSL]#, BGRB]  
+colour_array=[RGB, HSL, BGRB]  
 
 def random_colour():
     return colour_array[random.randint(0,len(colour_array)-1)]()

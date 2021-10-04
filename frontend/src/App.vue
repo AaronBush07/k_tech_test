@@ -6,24 +6,24 @@
       dark
     >
       <div class="d-flex align-center">
-        <h1>Random Colour Generator</h1>
+        <h2>Random Colour Generator</h2>
       </div>
     </v-app-bar>
 
     <v-main>
-      <ColourPallette/>
+      <ColourPalette/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import ColourPallette from './components/ColourPallette';
+import ColourPalette from './components/ColourPalette';
 
 export default {
   name: 'App',
 
   components: {
-    ColourPallette,
+    ColourPalette,
   },
 
   data: () => ({
