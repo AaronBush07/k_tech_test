@@ -51,5 +51,6 @@ export default {
     height: 0;
     padding-bottom: 100%;
     color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 </style>
